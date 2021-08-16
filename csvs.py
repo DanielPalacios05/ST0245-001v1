@@ -11,23 +11,20 @@ def read_csv(filename):
         return raw_data
     except:
         print("Data wasn't processed correctly")
-        raise
-        
-            
-        
-def read_folder(path : str,delimiter = -1):
-    imagenes = {}
-    try:
-        for files in os.listdir(path)[:delimiter]:
-            imagenes[files] = read_csv(path + "/" + files) 
-        return imagenes
-    except:
-        print("A file might have a problem")
         
 
-sanosx = read_folder("datasets\csv\enfermo_csv",2)
-print(sanosx)
+path_enfermos = input("Path de enfermo_csv: ")
+path_sanos = input("Path de sano_csv: ")
+      
+for archivos in os.listdir(path_enfermos):
 
-            
+    file_data = read_csv(path_enfermos + "/" + archivos)
+
+    # Aqui usariamos el algoritmo de compresion usando file_data
+    
+for archivos in os.listdir(path_sanos):
+        
+    file_data = read_csv(path_sanos + "/"  + archivos)
+    # Aqui usariamos el algoritmo de compresion usando file_data 
             
     
